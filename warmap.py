@@ -88,7 +88,6 @@ def parseKismet(gpsFile, bssidFile):
           deviceBaseLocationLng = deviceBaseLocation[0]
           coordList.append("%s, %s" % (deviceBaseLocationLat, deviceBaseLocationLng))
         except:
-          print("test")
           pass
 
         try:
@@ -97,7 +96,6 @@ def parseKismet(gpsFile, bssidFile):
           commonLocationLastLng = commonLocationLast[0]
           coordList.append("%s, %s" % (commonLocationLastLat, commonLocationLastLng))
         except:
-          print("test")
           pass
 
         try:
@@ -106,7 +104,6 @@ def parseKismet(gpsFile, bssidFile):
           commonLocationMaxLocLng = commonLocationMaxLoc[0]
           coordList.append("%s, %s" % (commonLocationMaxLocLat, commonLocationMaxLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -115,7 +112,6 @@ def parseKismet(gpsFile, bssidFile):
           commonLocationMinLocLng = commonLocationMinLoc[0]
           coordList.append("%s, %s" % (commonLocationMinLocLat, commonLocationMinLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -124,7 +120,6 @@ def parseKismet(gpsFile, bssidFile):
           deviceBaseSignalLng = deviceBaseSignal[0]
           coordList.append("%s, %s" % (deviceBaseSignalLat, deviceBaseSignalLng))
         except:
-          print("test")
           pass
 
         try:
@@ -133,7 +128,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLocationAvgLocLng = dot11DeviceLocationAvgLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLocationAvgLocLat, dot11DeviceLocationAvgLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -142,7 +136,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLocationLastLocLng = dot11DeviceLocationLastLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLocationLastLocLat, dot11DeviceLocationLastLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -151,7 +144,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLocationMaxLocLng = dot11DeviceLocationMaxLoc [0]
           coordList.append("%s, %s" % (dot11DeviceLocationMaxLocLat, dot11DeviceLocationMaxLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -160,7 +152,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLocationMinLocLng = dot11DeviceLocationMinLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLocationMinLocLat, dot11DeviceLocationMinLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -169,7 +160,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceRespondSSIDMapAvgLocLng = dot11DeviceRespondSSIDMapAvgLoc[0]
           coordList.append("%s, %s" % (dot11DeviceRespondSSIDMapAvgLocLat, dot11DeviceRespondSSIDMapAvgLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -178,7 +168,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceRespondSSIDMapLastLocLng = dot11DeviceRespondSSIDMapLastLoc[0]
           coordList.append("%s, %s" % (dot11DeviceRespondSSIDMapLastLocLat, dot11DeviceRespondSSIDMapLastLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -187,7 +176,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceRespondSSIDMapMaxLocLng = dot11DeviceRespondSSIDMapMaxLoc[0]
           coordList.append("%s, %s" % (dot11DeviceRespondSSIDMapMaxLocLat, dot11DeviceRespondSSIDMapMaxLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -196,7 +184,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceRespondSSIDMapMinLocLng = dot11DeviceRespondSSIDMapMinLoc[0]
           coordList.append("%s, %s" % (dot11DeviceRespondSSIDMapMinLocLat, dot11DeviceRespondSSIDMapMinLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -205,7 +192,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLastBeaconedSSIDRecordAvgLocLng = dot11DeviceLastBeaconedSSIDRecordAvgLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLastBeaconedSSIDRecordAvgLocLat, dot11DeviceLastBeaconedSSIDRecordAvgLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -214,7 +200,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLastBeaconedSSIDRecordLastLocLng = dot11DeviceLastBeaconedSSIDRecordLastLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLastBeaconedSSIDRecordLastLocLat, dot11DeviceLastBeaconedSSIDRecordLastLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -223,7 +208,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLastBeaconedSSIDRecordMaxLocLng = dot11DeviceLastBeaconedSSIDRecordMaxLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLastBeaconedSSIDRecordMaxLocLat, dot11DeviceLastBeaconedSSIDRecordMaxLocLng))
         except:
-          print("test")
           pass
 
         try:
@@ -232,7 +216,6 @@ def parseKismet(gpsFile, bssidFile):
           dot11DeviceLastBeaconedSSIDRecordMinLocLng = dot11DeviceLastBeaconedSSIDRecordMinLoc[0]
           coordList.append("%s, %s" % (dot11DeviceLastBeaconedSSIDRecordMinLocLat, dot11DeviceLastBeaconedSSIDRecordMinLocLng))
         except:
-          print("test")
           pass
 
         minSignal = deviceJson["kismet.device.base.signal"]["kismet.common.signal.min_signal"]
