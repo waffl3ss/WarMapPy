@@ -1,0 +1,4 @@
+pandas
+folium
+geopandas
+shapely
