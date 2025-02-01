@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import argparse
 import pandas as pd
 import folium
@@ -13,7 +11,7 @@ def print_banner():
      | | /| / /__ _____/  |/  /__ ____  / _ \__ __
      | |/ |/ / _ `/ __/ /|_/ / _ `/ _ \/ ___/ // /
      |__/|__/\_,_/_/ /_/  /_/\_,_/ .__/_/   \_, / 
-       v0.7     #Waffl3ss       /_/        /___/  
+       v0.6     #Waffl3ss       /_/        /___/  
     """
     print(banner)
 
@@ -121,7 +119,7 @@ def create_convex_map(data, prefix, map_type="normal"):
 def main():
     print_banner()
     parser = argparse.ArgumentParser(description="Generate maps from Wigle or Airodump CSV data.")
-    parser.add_argument("--input", "-i", required=True, nargs='+', help="Input CSV file(s) (Wigle or Airodump).")
+    parser.add_argument("--input", "-i", required=True, action='append', nargs='+', help="Input CSV file(s) (Wigle or Airodump).")
     parser.add_argument("--output", "-o", required=True, choices=["heatmap", "convex"], help="Type of map to generate.")
     parser.add_argument("--prefix", "-p", required=True, help="Prefix for the output file name.")
     parser.add_argument("--maptype", "-m", choices=["normal", "terrain"], default="normal", help="Map type (normal or terrain).")
@@ -130,15 +128,17 @@ def main():
     args = parser.parse_args()
 
     data_frames = []
-    for file in args.input:
-        if file.endswith(".wiglecsv"):
-            data_frames.append(parse_wigle(file))
-        elif file.endswith(".kismet.csv"):
-            data_frames.append(parse_airodump(file))
-        else:
-            raise ValueError("Unsupported file type. Use '.wiglecsv' for Wigle data or '.kismet.csv' for Airodump data.")
+    for file_list in args.input:
+        for file in file_list:
+            if file.endswith(".wiglecsv"):
+                data_frames.append(parse_wigle(file))
+            elif file.endswith(".kismet.csv"):
+                data_frames.append(parse_airodump(file))
+            else:
+                raise ValueError("Unsupported file type. Use '.wiglecsv' for Wigle data or '.kismet.csv' for Airodump data.")
     
-    data = pd.concat(data_frames, ignore_index=True)
+    data = pd.concat(data_frames, ignore_index=True).dropna(subset=['Latitude', 'Longitude'])
+    data = data[(data['Latitude'] != 0) & (data['Longitude'] != 0)]
     data = filter_data(data, args.filter)
     
     if data.empty:
