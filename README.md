@@ -37,5 +37,5 @@ options:
 ```
 ./WarMapPy.py -i Test.kismet.csv -o convex -p Test -m normal
 ./WarMapPy.py -i Test.wiglecsv -o heatmap -p Test -m terrain --filter SSIDs.txt
-./WarMapPy.py -i Test.kismet.csv -i Test.wiglecsv -o convex -p Test --filter "CIA Surveillance Van 5"
+./WarMapPy.py -i Test.kismet.csv Test.wiglecsv -o convex -p Test --filter "CIA Surveillance Van 5"
 ```
